@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}CommitStripBundle:Card:story{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    </head>
+
+{% block body %}
+        <h1>Welcome to the CommitStrip website !</h1>
+        <img src ="{{ card.picture }}">
+    <div>
+        {% set nextid = card.id + 1 %}
+        {% set previd = card.id - 1 %}
+        <a class="fleche" href="{{ path('commit_strip_story', {'id': previd }) }}"><img src="{{ asset('css/img/flga.jpeg') }}"></a>
+        <a class="fleche" href="{{ path('commit_strip_story', {'id': nextid }) }}"> <img src="{{ asset('css/img/fldr.jpeg') }}"></a>
+    </div>
+{% endblock %}
+</html>

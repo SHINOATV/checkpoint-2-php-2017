@@ -12,6 +12,6 @@ class AlgoController extends Controller
     //
     public function strlenOrder($string, $order)
     {
-
+        
     }
 }

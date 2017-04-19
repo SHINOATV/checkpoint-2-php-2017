@@ -1,0 +1,7 @@
+commit_strip_homepage:
+    path:     /
+    defaults: { _controller: SubjectBundle:Default:index }
+
+commit_strip_story:
+    path:     /story/{id}
+    defaults: { _controller: CommitStripBundle:Default:showStory }
