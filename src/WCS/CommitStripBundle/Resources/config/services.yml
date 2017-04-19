@@ -1,0 +1,4 @@
+services:
+#    wcs_commit_strip.example:
+#        class: WCS\CommitStripBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

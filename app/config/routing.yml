@@ -1,3 +1,7 @@
+wcs_commit_strip:
+    resource: "@WCSCommitStripBundle/Resources/config/routing.yml"
+    prefix:   /story
+
 subject:
     resource: "@SubjectBundle/Controller/"
     type:     annotation
