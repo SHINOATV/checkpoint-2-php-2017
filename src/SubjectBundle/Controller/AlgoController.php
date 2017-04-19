@@ -13,7 +13,7 @@ class AlgoController extends Controller
     public function strlenOrder($string, $order)
     {
     $string = 'il fait chaud';
-    $order = isset($_GET['inverse']) ? 'DESC' : 'ASC';
+    $string = explode("", $string);
 
     for($i=0;$i<strlen($string);$i++)
     {

@@ -3,30 +3,22 @@
 {% block title %}WCSCommitStripBundle:Card:showCard{% endblock %}
 
 {% block body %}
+<div class="container">
+    <div class="row">
+    <div class="col s8 offset-s4">
+        <img src="{{ card.picture }}" >
 
+        <p>{{ card.nbcard }}</p>
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            {% for card in cards %}
-                <div class="item">
-                    <div class="thumbnail">
-                        <img src="{{ card.picture }}" >
-                        <div class="caption">
-                             <p>{{ card.nbcard }}</p>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div><!-- End Carousel Inner -->
+        {% if cardprev != null %}
 
-        <div class="carousel-controls">
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-        </div>
-    </div><!-- /.carousel -->
+             <a href="{{ path('wcs_commit_strip_card', {'nbcard':cardprev.nbcard}) }}" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">-</i></a>
+        {% endif %}
 
-
-
-
-
+        {% if cardnext != null %}
+            <a href="{{ path('wcs_commit_strip_card', {'nbcard':cardnext.nbcard}) }}" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">+</i></a>
+        {% endif %}
+    </div>
+    </div>
+</div>
 {% endblock %}

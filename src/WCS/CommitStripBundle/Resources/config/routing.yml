@@ -3,5 +3,5 @@ wcs_commit_strip_homepage:
     defaults: { _controller: WCSCommitStripBundle:Default:index }
 
 wcs_commit_strip_card:
-    path:     /card
+    path:     /card/{nbcard}
     defaults: { _controller: WCSCommitStripBundle:Card:showCard }
