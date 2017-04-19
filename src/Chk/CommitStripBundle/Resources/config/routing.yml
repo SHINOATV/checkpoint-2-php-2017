@@ -1,0 +1,19 @@
+chk_commit_strip_homepage:
+    path:     /
+    defaults: { _controller: ChkCommitStripBundle:Default:page }
+
+chk_commit_strip_page1:
+    path:    /page1
+    defaults: {_controller: ChkCommitStripBundle:Default:page1}
+
+chk_commit_strip_page2:
+    path:    /page2
+    defaults: {_controller: ChkCommitStripBundle:Default:page2}
+
+chk_commit_strip_page3:
+    path:    /page3
+    defaults: {_controller: ChkCommitStripBundle:Default:page3}
+
+chk_commit_strip_page4:
+    path:    /page4
+    defaults: {_controller: ChkCommitStripBundle:Default:page4}

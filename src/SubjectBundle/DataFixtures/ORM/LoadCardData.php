@@ -1,8 +1,7 @@
 <?php
-/*
 namespace SubjectBundle\DataFixtures\ORM;
 
-use CommitStripBundle\Entity\Card;
+use Chk\CommitStripBundle\Entity\Card;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -32,10 +31,9 @@ class LoadCardData implements FixtureInterface
         foreach ($stories as $story){
             $card = new Card();
             $card->setPicture($story['picture']);
-            $card->setNbpage($story['nbcard']);
+            $card->setNbcard($story['nbcard']);
             $manager->persist($card);
         }
         $manager->flush();
     }
 }
-*/

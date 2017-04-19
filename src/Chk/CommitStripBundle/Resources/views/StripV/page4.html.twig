@@ -1,0 +1,19 @@
+{% extends '@Subject/layout.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="row spacer">
+            </div>
+            <div class="row center-align line_divider">
+                <div class="col s4 offset-s4">
+                    {% for image in images %}
+                        {% if image.nbcard == 4 %}<img src="{{image.picture}}" alt="commitstrip">{% endif %}
+                    {% endfor %}
+                    <a href="{{ path('chk_commit_strip_page3') }}" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">fast_rewind</i></a>
+                    <a href="{{ path('chk_commit_strip_homepage') }}" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">fast_forward</i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

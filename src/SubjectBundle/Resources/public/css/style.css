@@ -3,7 +3,13 @@
 
 /* GENERAL */
 body{
-    text-align: center;;
+    text-align: center;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main{
+    flex: 1 0 auto;
 }
 h1, h2, h3{
     color: rgb(239, 151, 33);
@@ -79,6 +85,11 @@ nav ul li a, .dropdown-content{
     color: red;
     font-weight: bold;
     font-size: large;
+}
+
+/*Spacing*/
+.spacer {
+    height:6em;
 }
 
 /* BOUTON */

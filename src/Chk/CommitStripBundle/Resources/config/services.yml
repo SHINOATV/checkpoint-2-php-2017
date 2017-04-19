@@ -1,0 +1,4 @@
+services:
+#    chk_commit_strip.example:
+#        class: Chk\CommitStripBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
