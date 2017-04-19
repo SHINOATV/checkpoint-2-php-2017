@@ -4,10 +4,45 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="{{ asset('style.css') }}" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+    <nav class="navbar navbar-inverse ">
+        <div class="container">
+            <button type="button" class="navbar-toggle"
+                    data-toggle="collapse"
+                    data-target=".navbar-collapse"
+            >
+                <span class="sr-only"> Toggle navigation</span>
+                <span class="icon-bar"> </span>
+                <span class="icon-bar"> </span>
+                <span class="icon-bar"> </span>
+            </button>
+
+            <a class="navbar-brand" href="{{ path('wcs_commit_strip_storypagelist') }}">Wild Code School</a>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    {% block navbar %}{% endblock %}
+                </ul>
+            </div>
+        </div>
+    </nav>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    <div class="navbar  navbar-inverse">
+        <div class="container">
+            <div class="navbar-text pull=left">
+                <p> Wild Code School. Checkpoint 2. 2017. Alexandre V.</p>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    {% block javascripts %}{% endblock %}
+
     </body>
 </html>

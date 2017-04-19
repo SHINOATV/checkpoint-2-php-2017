@@ -1,0 +1,100 @@
+
+
+{% extends 'base.html.twig' %}
+{% block navbar %}
+    <li class=""><a href="{{ path('wcs_commit_strip_storypagelist')}}">Home</a> </li>
+
+{% endblock %}
+{% block body %}
+
+    <div class="container">
+
+        <div class="row col-md-10 col-md-offset-1 custyle">
+            {% for type, flash_messages in app.session.flashBag.all %}
+                {% for flash_message in flash_messages %}
+                    <div class="flash-{{ type }} alert alert-success">
+                        <strong>Success!</strong> {{ flash_message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            <table class="table table-striped custab">
+                <thead>
+                <button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary btn-xs pull-right">Add new story</button>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Card Numbers</th>
+                    <th class="text-center">Action</th>
+                </tr>
+                </thead>
+                {% for story in stories %}
+                    <tr>
+                        <td>{{ story.id }}</td>
+                        <td>{{ story.name }}</td>
+                        <td>{{ story.cards|length }}</td>
+                        <td class="text-center"><a class='btn btn-info btn-xs' href="{{  path('wcs_commit_strip_storypage', {'storyid': story.id, 'nbpage': 1 })  }}"><span class="glyphicon glyphicon-edit"></span> View</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    <!-- line modal -->
+    <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title" id="lineModalLabel">My Modal</h3>
+                </div>
+                <div class="modal-body">
+
+                    <!-- content goes here -->
+                    <form action="{{ path('addstory')}}" method="post">
+                        <div class="form-group">
+                            <label for="Name">Name</label>
+                            <input type="text" class="form-control" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Card</label>
+                            <input type="text" class="form-control" placeholder="PictureURL" name="cardurl" required>
+                        </div>
+
+                        <span class="btn input-group-addon add-field">(+)</span>
+                    <br/>
+                        <br/>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <div class="btn-group btn-group-justified" role="group" aria-label="group button">
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Close</button>
+                        </div>
+                        <div class="btn-group btn-delete hidden" role="group">
+                            <button type="button" id="delImage" class="btn btn-default btn-hover-red" data-dismiss="modal"  role="button">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block javascripts %}
+    <script>
+        var cardurlcount = 1;
+
+        $('.add-field').click(function() {
+            var template = '<div class="form-group"><input type="text" class="form-control" name="cardurl' + cardurlcount + '" placeholder="PictureURL"></div>';
+            var temp = $(template).insertBefore('.add-field');
+            cardurlcount++;
+        });
+
+        $('.fields').on('click', '.delete-field', function(){
+            $(this).parent().remove();
+        });
+
+
+    </script>
+{% endblock %}

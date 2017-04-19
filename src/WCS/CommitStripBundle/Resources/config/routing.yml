@@ -1,0 +1,15 @@
+wcs_commit_strip_homepage:
+    path:     /
+    defaults: { _controller: WCSCommitStripBundle:Default:index }
+
+wcs_commit_strip_storypage:
+    path: /story/{storyid}/{nbpage}
+    defaults: { _controller: WCSCommitStripBundle:Default:story }
+
+wcs_commit_strip_storypagelist:
+    path: /story
+    defaults: { _controller: WCSCommitStripBundle:Default:storylist }
+
+addstory:
+    path: /addstory
+    defaults: { _controller: WCSCommitStripBundle:Default:addstory }
