@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Checkpoint 2 - PHP</title>
+    {% block stylesheets %}
+        <!-- Compiled and minified CSS -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+        <link rel="stylesheet" href="{{ asset('bundles/subject/css/stylesheets.css') }}">
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="https://avatars1.githubusercontent.com/u/8874047?v=3&s=200" />
+</head>
+
+<body id="body">
+{% block nav_bar %}
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo nav_bar_logo"><img src="https://avatars1.githubusercontent.com/u/8874047?v=3&s=200" alt="logo wcs"/>
+            </a>
+
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}{% endblock %}
+
+{% block footer %}
+    <footer class="page-footer">
+        <div class="footer-copyright">
+            <div class="container">
+                © 2017 Copyright
+            </div>
+        </div>
+    </footer>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+{% endblock %}
+</body>
+</html>
