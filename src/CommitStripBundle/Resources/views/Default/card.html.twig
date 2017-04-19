@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <table>
+        <thead>
+        <tr>
+            <th>Picture</th>
+            <th>nbCard</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for card in cards %}
+            <tr>
+                <td>
+                    {{ card.picture }}
+                </td>
+                <td>
+                    {{ card.nbCard }}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
