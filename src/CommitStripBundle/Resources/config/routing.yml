@@ -1,0 +1,3 @@
+commit_strip_homepage:
+    path:     /
+    defaults: { _controller: CommitStripBundle:Default:index }
