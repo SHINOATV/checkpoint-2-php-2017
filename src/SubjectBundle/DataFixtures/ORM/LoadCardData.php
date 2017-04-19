@@ -1,8 +1,8 @@
 <?php
-/*
+
 namespace SubjectBundle\DataFixtures\ORM;
 
-use CommitStripBundle\Entity\Card;
+use WCS\CommitStripBundle\Entity\Card;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -38,4 +38,3 @@ class LoadCardData implements FixtureInterface
         $manager->flush();
     }
 }
-*/

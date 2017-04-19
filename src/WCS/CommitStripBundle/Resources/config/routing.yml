@@ -1,0 +1,3 @@
+wcs_commit_strip_homepage:
+    path:     /
+    defaults: { _controller: WCSCommitStripBundle:Default:index }
