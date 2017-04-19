@@ -1,0 +1,32 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}WCSCommitStripBundle:Card:showCard{% endblock %}
+
+{% block body %}
+
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            {% for card in cards %}
+                <div class="item">
+                    <div class="thumbnail">
+                        <img src="{{ card.picture }}" >
+                        <div class="caption">
+                             <p>{{ card.nbcard }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div><!-- End Carousel Inner -->
+
+        <div class="carousel-controls">
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+        </div>
+    </div><!-- /.carousel -->
+
+
+
+
+
+{% endblock %}
