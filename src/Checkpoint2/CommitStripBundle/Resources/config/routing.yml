@@ -1,0 +1,7 @@
+checkpoint2_commit_strip_homepage:
+    path:     /
+    defaults: { _controller: Checkpoint2CommitStripBundle:Default:index }
+
+checkpoint2_commit_strip_story:
+    path:     /story
+    defaults: { _controller: Checkpoint2CommitStripBundle:Story:DisplayStory }
