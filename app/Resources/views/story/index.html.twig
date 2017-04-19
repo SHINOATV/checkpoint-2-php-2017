@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Stories list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for story in stories %}
+            <tr>
+                <td><a href="{{ path('story_show', { 'id': story.id }) }}">{{ story.id }}</a></td>
+                <td>{{ story.title }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('story_show', { 'id': story.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('story_edit', { 'id': story.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('story_new') }}">Create a new story</a>
+        </li>
+    </ul>
+{% endblock %}

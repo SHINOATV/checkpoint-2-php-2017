@@ -1,0 +1,11 @@
+wcs_commit_strip_story_list:
+    path:     /story/
+    defaults: { _controller: WCSCommitStripBundle:Story:listStories}
+
+wcs_commit_strip_story_show:
+    path:     /story/{id_story}/{id_card}
+    defaults: { _controller: WCSCommitStripBundle:Story:showCard}
+
+wcs_commit_strip_story_add:
+    path:     /story/add
+    defaults: { _controller: WCSCommitStripBundle:Story:addStory}

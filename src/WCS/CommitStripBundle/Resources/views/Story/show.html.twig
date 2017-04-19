@@ -1,0 +1,27 @@
+{% extends "WCSCommitStripBundle::layout.html.twig" %}
+
+{% block content %}
+<div class="row">
+    <h4 class="center-align">{{ card.story.title }}</h4>
+    <div class="card col s6 offset-s3">
+        <div class="card-content">
+            <img class="card_img" src="{{ card.picture }}" alt="Card #{{ card.nbcard }}">
+        </div>
+        <div class="card-tabs">
+            <ul class="tabs tabs-fixed-width">
+                {% if card.id != 1 %}
+                    <li class="tab"><a href="{{ path('wcs_commit_strip_story_show', {'id_story': 1, 'id_card': card.id - 1}) }}">Précédent</a>
+                    </li>
+                {% endif %}
+                {% if card.id != count %}
+                    <li class="tab"><a href="{{ path('wcs_commit_strip_story_show', {'id_story': 1, 'id_card': card.id + 1}) }}">Suivant</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+    <div class="card col s6 offset-s3">
+        <a href="{{ path('wcs_commit_strip_story_list') }}">Liste des stories</a>
+    </div>
+</div>
+{% endblock %}
