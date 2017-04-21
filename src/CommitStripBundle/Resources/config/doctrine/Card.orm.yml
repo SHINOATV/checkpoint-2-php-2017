@@ -1,0 +1,17 @@
+CommitStripBundle\Entity\Card:
+    type: entity
+    table: null
+    repositoryClass: CommitStripBundle\Repository\CardRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        picture:
+            type: string
+            length: 255
+        nbcard:
+            type: integer
+    lifecycleCallbacks: {  }
