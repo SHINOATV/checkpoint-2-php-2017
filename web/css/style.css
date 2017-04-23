@@ -1,0 +1,14 @@
+.image {
+    margin: auto;
+    height: 50%;
+    display: block;
+
+}
+
+.tabs .tab a {
+    color: darkgreen;
+}
+
+.tabs .tab a:hover {
+    color: darkred;
+}

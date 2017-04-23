@@ -1,0 +1,11 @@
+Check_commit_strip_story_list:
+    path:     /story/
+    defaults: { _controller: CheckCommitStripBundle:Story:listStories}
+
+Check_commit_strip_story_show:
+    path:     /story/{id_story}/{id_card}
+    defaults: { _controller: CheckCommitStripBundle:Story:showCard}
+
+Check_commit_strip_story_add:
+    path:     /story/add
+    defaults: { _controller: CheckCommitStripBundle:Story:addStory}

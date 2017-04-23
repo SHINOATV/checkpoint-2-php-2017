@@ -1,0 +1,27 @@
+{% extends "CheckCommitStripBundle::layout.html.twig" %}
+
+{% block content %}
+    <div class="row">
+        <div class="card col s6 offset-s3">
+            <table>
+                <thead>
+                <tr>
+                    <th>Numéro Story</th>
+                    <th>Titre</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for story in stories %}
+                    <tr>
+                        <th><a href="{{ path('Check_commit_strip_story_show', {'id_story': story.id, 'id_card': 1}) }}">{{ story.id }}</a></th>
+                        <th>{{ story.title }}</th>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="card col s6 offset-s3">
+            <a href="{{ path('Check_commit_strip_story_add') }}">Ajouter story</a>
+        </div>
+    </div>
+{% endblock %}

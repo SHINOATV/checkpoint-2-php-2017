@@ -1,0 +1,11 @@
+{% extends "CheckCommitStripBundle::layout.html.twig" %}
+
+{% block content %}
+    <h4>Story creation</h4>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Nouvelle story" />
+    {{ form_end(form) }}
+
+{% endblock %}
